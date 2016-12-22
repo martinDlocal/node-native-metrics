@@ -4,8 +4,8 @@
   "description": "A module for generating metrics from V8.",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npm install node-pre-gyp",
-    "install": "node-pre-gyp install --fallback-to-build",
+    "install": "node -e ''",
+    "postinstall": "node-pre-gyp install --fallback-to-build",
     "lint": "eslint ./*.js lib",
     "unit": "tap --expose-gc tests/**/*.tap.js",
     "integration": "node tests/integration/server.js",
