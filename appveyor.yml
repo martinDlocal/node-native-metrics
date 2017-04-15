@@ -10,7 +10,8 @@ install:
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node $env:nodejs_version
   # Install modules
-  - npm install -- --no-download
+  - npm install
+  - npm run rebuild # Ensure this is not a downloaded build!
 
 # Disable appveyor's build step.
 build: off
