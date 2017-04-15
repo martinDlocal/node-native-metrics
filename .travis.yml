@@ -12,7 +12,7 @@ before_install:
   - UPLOAD_BUILD=false
   - if [[ $TRAVIS_BRANCH == `git describe --tags --always HEAD` ]]; then UPLOAD_BUILD=true; fi;
 
-install: PRE_BUILD_NO_DOWNLOAD=true npm install && npm run build
+install: npm install -- --no-download
 
 script:
   - if [[ "$TRAVIS_NODE_VERSION" != "0.12" ]]; then npm run lint; fi
